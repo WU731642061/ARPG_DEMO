@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cheylijxcug1a"]
+
+[ext_resource type="Script" path="res://Entities/PlayerSpawn/player_spawn.gd" id="1_ppbo8"]
+
+[sub_resource type="Gradient" id="Gradient_3c52x"]
+offsets = PackedFloat32Array(0, 0.0170648)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_is2br"]
+gradient = SubResource("Gradient_3c52x")
+width = 12
+
+[node name="PlayerSpawn" type="Node2D"]
+script = ExtResource("1_ppbo8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.366667, 4)
+texture = SubResource("GradientTexture1D_is2br")

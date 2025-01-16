@@ -1,0 +1,364 @@
+[gd_scene load_steps=21 format=3 uid="uid://b7d2wm71n4pc3"]
+
+[ext_resource type="Script" path="res://Entities/PlayerGirl/player_girl.gd" id="1_vtncg"]
+[ext_resource type="Texture2D" uid="uid://c4lf26cdewok4" path="res://Entities/PlayerGirl/sprites/Idle/Normal/Idle.png" id="2_fghdf"]
+[ext_resource type="Texture2D" uid="uid://dsky6ir5763fi" path="res://Entities/PlayerGirl/sprites/Idle/Gun/Idle_Gun.png" id="3_wjuy2"]
+[ext_resource type="Texture2D" uid="uid://3e5g3k8nn87r" path="res://Entities/PlayerGirl/sprites/Run/Normal/Run.png" id="4_rvife"]
+[ext_resource type="Texture2D" uid="uid://bk3nkgmpeec6q" path="res://Entities/PlayerGirl/sprites/Run/Gun/Run_Gun.png" id="5_rwbh5"]
+[ext_resource type="Texture2D" uid="uid://dxg07ujr5wc4t" path="res://Entities/PlayerGirl/sprites/Run_while_shooting/Run_while_shooting.png" id="6_1e38d"]
+[ext_resource type="Texture2D" uid="uid://diosgswctk4u6" path="res://Entities/PlayerGirl/sprites/Dash/Normal/Dash.png" id="7_26mxd"]
+[ext_resource type="Texture2D" uid="uid://dyb4qaydl4fs2" path="res://Entities/PlayerGirl/sprites/Dash/Gun/Dash_Gun.png" id="8_t5fs5"]
+[ext_resource type="Texture2D" uid="uid://duucv4s3374ha" path="res://Entities/PlayerGirl/sprites/Attack/Gun/Shooting.png" id="9_r04u7"]
+[ext_resource type="Texture2D" uid="uid://cnwd83qniclxh" path="res://Entities/PlayerGirl/sprites/Shadow.png" id="10_o0ueb"]
+
+[sub_resource type="Animation" id="Animation_qfv1x"]
+resource_name = "idle_normal_down"
+length = 0.9
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character/Image/IdleNormal:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 7]
+}
+
+[sub_resource type="Animation" id="Animation_nj7tk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character/Image/IdleNormal:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Character/Image/IdleNormal:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Character/Image/IdleGun:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Character/Image/RunNormal:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Character/Image/RunGun:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Character/Image/RunShooting:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Character/Image/DashNormal:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Character/Image/DashGun:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Character/Image/AttackGun:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_mpifr"]
+resource_name = "idle_normal_left_down"
+length = 0.9
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character/Image/IdleNormal:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [8, 15]
+}
+
+[sub_resource type="Animation" id="Animation_rbq61"]
+resource_name = "idle_normal_left"
+length = 0.9
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character/Image/IdleNormal:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [8, 15]
+}
+
+[sub_resource type="Animation" id="Animation_tvw8w"]
+resource_name = "idle_normal_left_up"
+length = 0.9
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character/Image/IdleNormal:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [16, 23]
+}
+
+[sub_resource type="Animation" id="Animation_iacow"]
+resource_name = "idle_normal_up"
+length = 0.9
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character/Image/IdleNormal:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [24, 31]
+}
+
+[sub_resource type="Animation" id="Animation_w2pbf"]
+resource_name = "idle_normal_right_up"
+length = 0.9
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character/Image/IdleNormal:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [32, 39]
+}
+
+[sub_resource type="Animation" id="Animation_gqs43"]
+resource_name = "idle_normal_right"
+length = 0.9
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character/Image/IdleNormal:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [40, 47]
+}
+
+[sub_resource type="Animation" id="Animation_muw8b"]
+resource_name = "idle_normal_right_down"
+length = 0.9
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Character/Image/IdleNormal:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [40, 47]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_44461"]
+_data = {
+"RESET": SubResource("Animation_nj7tk"),
+"idle_normal_down": SubResource("Animation_qfv1x"),
+"idle_normal_left": SubResource("Animation_rbq61"),
+"idle_normal_left_down": SubResource("Animation_mpifr"),
+"idle_normal_left_up": SubResource("Animation_tvw8w"),
+"idle_normal_right": SubResource("Animation_gqs43"),
+"idle_normal_right_down": SubResource("Animation_muw8b"),
+"idle_normal_right_up": SubResource("Animation_w2pbf"),
+"idle_normal_up": SubResource("Animation_iacow")
+}
+
+[node name="PlayerGirl" type="CharacterBody2D"]
+script = ExtResource("1_vtncg")
+
+[node name="Character" type="Node2D" parent="."]
+
+[node name="Image" type="Sprite2D" parent="Character"]
+
+[node name="IdleNormal" type="Sprite2D" parent="Character/Image"]
+texture = ExtResource("2_fghdf")
+hframes = 8
+vframes = 6
+
+[node name="IdleGun" type="Sprite2D" parent="Character/Image"]
+visible = false
+texture = ExtResource("3_wjuy2")
+hframes = 8
+vframes = 6
+
+[node name="RunNormal" type="Sprite2D" parent="Character/Image"]
+visible = false
+texture = ExtResource("4_rvife")
+hframes = 8
+vframes = 6
+
+[node name="RunGun" type="Sprite2D" parent="Character/Image"]
+visible = false
+texture = ExtResource("5_rwbh5")
+hframes = 8
+vframes = 8
+
+[node name="RunShooting" type="Sprite2D" parent="Character/Image"]
+visible = false
+texture = ExtResource("6_1e38d")
+hframes = 8
+vframes = 8
+
+[node name="DashNormal" type="Sprite2D" parent="Character/Image"]
+visible = false
+texture = ExtResource("7_26mxd")
+hframes = 8
+vframes = 6
+
+[node name="DashGun" type="Sprite2D" parent="Character/Image"]
+visible = false
+texture = ExtResource("8_t5fs5")
+hframes = 8
+vframes = 6
+
+[node name="AttackGun" type="Sprite2D" parent="Character/Image"]
+visible = false
+texture = ExtResource("9_r04u7")
+hframes = 8
+vframes = 8
+
+[node name="Shadow" type="Sprite2D" parent="Character"]
+texture = ExtResource("10_o0ueb")
+
+[node name="ImageAnimation" type="AnimationPlayer" parent="Character"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_44461")
+}
+autoplay = "idle_normal_down"
+
+[node name="EffectAnimation" type="AnimationPlayer" parent="Character"]
+
+[node name="StateMachine" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="StateMachine"]
+
+[node name="Normal" type="Node" parent="StateMachine/Idle"]
+
+[node name="Gun" type="Node" parent="StateMachine/Idle"]
+
+[node name="Run" type="Node" parent="StateMachine"]
+
+[node name="Normal" type="Node" parent="StateMachine/Run"]
+
+[node name="Gun" type="Node" parent="StateMachine/Run"]
+
+[node name="Shooting" type="Node" parent="StateMachine/Run"]
+
+[node name="Dash" type="Node" parent="StateMachine"]
+
+[node name="Normal" type="Node" parent="StateMachine/Dash"]
+
+[node name="Gun" type="Node" parent="StateMachine/Dash"]
+
+[node name="Attack" type="Node" parent="StateMachine"]
+
+[node name="Gun" type="Node" parent="StateMachine/Attack"]

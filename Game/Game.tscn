@@ -1,17 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl702cor5fyrb"]
+[gd_scene load_steps=6 format=3 uid="uid://cl702cor5fyrb"]
 
-[ext_resource type="PackedScene" uid="uid://dao68m2cv5vll" path="res://Entities/Player/Player.tscn" id="1_76x8h"]
+[ext_resource type="Script" path="res://Game/game.gd" id="1_hiejy"]
 [ext_resource type="PackedScene" uid="uid://domojfssmwlfx" path="res://Stages/GrassMap/GrassMap.tscn" id="2_kr3g4"]
 [ext_resource type="PackedScene" uid="uid://dekw0bsljfjnh" path="res://Entities/Plants/Plant.tscn" id="3_rh5l6"]
 [ext_resource type="PackedScene" uid="uid://brei2vtrw0212" path="res://Entities/Slime/Slime.tscn" id="4_q602k"]
+[ext_resource type="PackedScene" uid="uid://cheylijxcug1a" path="res://Entities/PlayerSpawn/PlayerSpawn.tscn" id="4_u5cak"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
-
-[node name="Player" parent="." instance=ExtResource("1_76x8h")]
-position = Vector2(300, 150)
+script = ExtResource("1_hiejy")
 
 [node name="Map" parent="." instance=ExtResource("2_kr3g4")]
+position = Vector2(8, 22)
 
 [node name="Plant" parent="." instance=ExtResource("3_rh5l6")]
 position = Vector2(419, 212)
@@ -24,3 +24,6 @@ position = Vector2(612, 215)
 
 [node name="Slime" parent="." instance=ExtResource("4_q602k")]
 position = Vector2(261, 49)
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("4_u5cak")]
+position = Vector2(258, 188)

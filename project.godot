@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 MapManager="*res://Global/global_map_manager.gd"
+PlayerHub="*res://Entities/UI/PlayerHud/PlayerHub.tscn"
 PlayerManager="*res://Global/glopbal_player_manager.gd"
 
 [display]
